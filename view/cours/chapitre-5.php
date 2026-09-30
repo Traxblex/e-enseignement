@@ -12,9 +12,12 @@ $min = min($tab);
 $max = max($tab);
 $moyenne = array_sum($tab) / count($tab);
 
-echo "Min : $min\n";
-echo "Max : $max\n";
-echo "Moyenne : $moyenne\n";</code></pre></section>
+echo "Min : $min
+";
+echo "Max : $max
+";
+echo "Moyenne : $moyenne
+";</code></pre></section>
         <section class="lesson-card"><h2>JavaScript</h2><pre class="code-block"><code>const tab = [12, 8, 15, 10];
 
 const min = Math.min(...tab);
@@ -25,5 +28,8 @@ console.log("Min :", min);
 console.log("Max :", max);
 console.log("Moyenne :", moyenne);</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <div class="lesson-practice">
+        <div><span class="eyebrow">MISE EN PRATIQUE</span><h2>Analyse le tableau fourni.</h2><p>Commence par vérifier le résultat puis modifie le tableau pour observer l'effet sur les statistiques.</p></div>
+        <a class="hero-button" href="index.php?page=compiler&language=php&lesson=5">Ouvrir l'exercice →</a>
+    </div>
 </article>
