@@ -10,7 +10,8 @@ $n = 24;
 
 for ($d = 1; $d <= $n; $d++) {
     if ($n % $d === 0) {
-        echo "$d est un diviseur\n";
+        echo "$d est un diviseur
+";
     }
 }</code></pre></section>
         <section class="lesson-card"><h2>JavaScript</h2><pre class="code-block"><code>const n = 24;
@@ -21,5 +22,5 @@ for (let d = 1; d <= n; d++) {
     }
 }</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler&example=divisors&lang=php">Tester cet exercice dans le compilateur →</a>
+    <div class="lesson-practice"><div><span class="eyebrow">MISE EN PRATIQUE</span><h2>Choisis un entier et observe ses diviseurs.</h2><p>L'entrée standard contient déjà un exemple. Change-la pour tester d'autres nombres.</p></div><a class="hero-button" href="index.php?page=compiler&example=divisors&lang=php">Ouvrir l'exercice →</a></div>
 </article>
