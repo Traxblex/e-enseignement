@@ -86,7 +86,7 @@ if (!is_dir($runnerBase) && !mkdir($runnerBase, 0770, true)) {
 
 $base = $runnerBase . '/eenseignement-' . bin2hex(random_bytes(12));
 
-if (!mkdir($base, 0700, true)) {
+if (!mkdir($base, 0755, true)) {
     http_response_code(500);
     echo json_encode(['success' => false, 'error' => 'Impossible de créer l’espace temporaire.']);
     exit;
