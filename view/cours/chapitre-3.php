@@ -21,5 +21,5 @@ for (let d = 1; d <= n; d++) {
     }
 }</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=divisors&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
