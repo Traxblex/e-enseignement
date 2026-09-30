@@ -27,27 +27,75 @@ PHP
     'equation' => [
         'label' => 'Chapitre 02 · Équation',
         'language' => 'php',
-        'code' => "<?php\n$a = 2;\n$b = -6;\n\nif ($a == 0) {\n    echo $b == 0 ? \"Tous les réels\" : \"Aucune solution\";\n} else {\n    echo \"x = \" . (-$b / $a);\n}\n",
+        'code' => <<<'PHP'
+<?php
+$a = 2;
+$b = -6;
+
+if ($a == 0) {
+    echo $b == 0 ? "Tous les réels" : "Aucune solution";
+} else {
+    echo "x = " . (-$b / $a);
+}
+PHP
+,
     ],
     'divisors' => [
         'label' => 'Chapitre 03 · Diviseurs',
         'language' => 'php',
-        'code' => "<?php\n$n = 24;\n\nfor ($d = 1; $d <= $n; $d++) {\n    if ($n % $d === 0) {\n        echo \"$d est un diviseur\\n\";\n    }\n}\n",
+        'code' => <<<'PHP'
+<?php
+$n = 24;
+
+for ($d = 1; $d <= $n; $d++) {
+    if ($n % $d === 0) {
+        echo "$d est un diviseur
+";
+    }
+}
+PHP
+,
     ],
     'functions' => [
         'label' => 'Chapitre 04 · Fonctions',
         'language' => 'php',
-        'code' => "<?php\nfunction aireRectangle(float $longueur, float $largeur): float {\n    return $longueur * $largeur;\n}\n\necho aireRectangle(10, 5);\n",
+        'code' => <<<'PHP'
+<?php
+function aireRectangle(float $longueur, float $largeur): float {
+    return $longueur * $largeur;
+}
+
+echo aireRectangle(10, 5);
+PHP
+,
     ],
     'arrays' => [
         'label' => 'Chapitre 05 · Tableaux',
         'language' => 'php',
-        'code' => "<?php\n$tab = [12, 8, 15, 10];\n\necho \"Min : \" . min($tab) . \"\\n\";\necho \"Max : \" . max($tab) . \"\\n\";\necho \"Moyenne : \" . (array_sum($tab) / count($tab)) . \"\\n\";\n",
+        'code' => <<<'PHP'
+<?php
+$tab = [12, 8, 15, 10];
+
+echo "Min : " . min($tab) . "
+";
+echo "Max : " . max($tab) . "
+";
+echo "Moyenne : " . (array_sum($tab) / count($tab)) . "
+";
+PHP
+,
     ],
     'files' => [
         'label' => 'Chapitre 06 · Fichiers',
         'language' => 'php',
-        'code' => "<?php\n$texte = \"Bonjour depuis un fichier !\\n\";\nfile_put_contents(\"/tmp/message.txt\", $texte);\necho file_get_contents(\"/tmp/message.txt\");\n",
+        'code' => <<<'PHP'
+<?php
+$texte = "Bonjour depuis un fichier !
+";
+file_put_contents("/tmp/message.txt", $texte);
+echo file_get_contents("/tmp/message.txt");
+PHP
+,
     ],
 ];
 ?>
