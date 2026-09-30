@@ -83,7 +83,10 @@ if (!mkdir($base, 0700, true)) {
 file_put_contents($base . '/' . $profile['source'], $code);
 file_put_contents($base . '/stdin.txt', $stdin);
 
-$mount = $base . ':/workspace:ro';
+// --mount exige une syntaxe key=value.
+// Le chemin temporaire peut contenir des caractères spéciaux : on le passe
+// directement à Docker via les arguments échappés plus bas.
+$mount = 'type=bind,source=' . $base . ',target=/workspace,readonly';
 
 $command = [
     'docker', 'run', '--rm',
