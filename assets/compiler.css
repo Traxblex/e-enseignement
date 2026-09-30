@@ -32,3 +32,7 @@ body{background:radial-gradient(circle at 15% -10%,rgba(37,99,235,.16),transpare
 .lesson-practice h2{margin:6px 0 5px;font-size:1.15rem}.lesson-practice p{margin:0;color:#94a3b8;line-height:1.6}.lesson-practice .hero-button{margin-top:0;white-space:nowrap}
 @media(max-width:900px){.home-hero{grid-template-columns:1fr;padding-top:45px}.hero-terminal{transform:none}.feature-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.home-page{padding-left:14px;padding-right:14px}.home-hero h1{font-size:clamp(3rem,16vw,5rem)}.feature-grid{grid-template-columns:1fr}.hero-stats{gap:22px}.lesson-practice{align-items:flex-start;flex-direction:column}.lesson-practice .hero-button{margin-top:4px}}
+
+.editor-footer{display:flex;justify-content:space-between;gap:15px;padding:8px 14px;color:#64748b;background:#0a111e;border-top:1px solid #1d2a40;font-size:.75rem}
+.example-context{margin-top:12px;padding:9px 12px;border:1px solid #26334f;border-radius:9px;background:#111827;color:#93c5fd;font-size:.82rem}
+@media(max-width:650px){.editor-footer{flex-direction:column;gap:3px}}
