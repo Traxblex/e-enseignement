@@ -29,7 +29,7 @@ $languages = [
     </div>
 </div>
 <script>
-const compilerTemplates = <?= json_encode(array_column($languages, 'template'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
+const compilerTemplates = <?= json_encode(array_combine(array_keys($languages), array_column($languages, 'template')), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
 const editor = document.getElementById('code-editor');
 const language = document.getElementById('language');
 const stdin = document.getElementById('stdin');
