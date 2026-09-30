@@ -6,10 +6,43 @@ $languages = [
     'javascript' => ['label' => 'JavaScript', 'template' => "console.log(\"Bonjour depuis JavaScript !\");\n"],
     'python' => ['label' => 'Python', 'template' => "print(\"Bonjour depuis Python !\")\n"],
 ];
+
+$examples = [
+    'rectangle' => [
+        'label' => 'Chapitre 01 · Rectangle',
+        'language' => 'php',
+        'code' => "<?php\n$lg = 10;\n$lr = 5;\n\n$p = 2 * ($lg + $lr);\n$s = $lg * $lr;\n\necho \"Périmètre : $p\\n\";\necho \"Aire : $s\\n\";\n",
+    ],
+    'equation' => [
+        'label' => 'Chapitre 02 · Équation',
+        'language' => 'php',
+        'code' => "<?php\n$a = 2;\n$b = -6;\n\nif ($a == 0) {\n    echo $b == 0 ? \"Tous les réels\" : \"Aucune solution\";\n} else {\n    echo \"x = \" . (-$b / $a);\n}\n",
+    ],
+    'divisors' => [
+        'label' => 'Chapitre 03 · Diviseurs',
+        'language' => 'php',
+        'code' => "<?php\n$n = 24;\n\nfor ($d = 1; $d <= $n; $d++) {\n    if ($n % $d === 0) {\n        echo \"$d est un diviseur\\n\";\n    }\n}\n",
+    ],
+    'functions' => [
+        'label' => 'Chapitre 04 · Fonctions',
+        'language' => 'php',
+        'code' => "<?php\nfunction aireRectangle(float $longueur, float $largeur): float {\n    return $longueur * $largeur;\n}\n\necho aireRectangle(10, 5);\n",
+    ],
+    'arrays' => [
+        'label' => 'Chapitre 05 · Tableaux',
+        'language' => 'php',
+        'code' => "<?php\n$tab = [12, 8, 15, 10];\n\necho \"Min : \" . min($tab) . \"\\n\";\necho \"Max : \" . max($tab) . \"\\n\";\necho \"Moyenne : \" . (array_sum($tab) / count($tab)) . \"\\n\";\n",
+    ],
+    'files' => [
+        'label' => 'Chapitre 06 · Fichiers',
+        'language' => 'php',
+        'code' => "<?php\n$texte = \"Bonjour depuis un fichier !\\n\";\nfile_put_contents(\"/tmp/message.txt\", $texte);\necho file_get_contents(\"/tmp/message.txt\");\n",
+    ],
+];
 ?>
 <div class="compiler-page">
     <div class="compiler-hero">
-        <div><span class="eyebrow">E-ENSEIGNEMENT</span><h1>Laboratoire de programmation</h1><p>Écris ton code, exécute-le sur le serveur et consulte immédiatement le résultat.</p></div>
+        <div><span class="eyebrow">E-ENSEIGNEMENT</span><h1>Laboratoire de programmation</h1><p>Écris ton code, exécute-le sur le serveur et consulte immédiatement le résultat.</p><div id="example-context" class="example-context" hidden></div></div>
         <span class="status-pill"><span></span> Exécution sécurisée</span>
     </div>
     <div class="compiler-grid">
@@ -30,6 +63,7 @@ $languages = [
 </div>
 <script>
 const compilerTemplates = <?= json_encode(array_combine(array_keys($languages), array_column($languages, 'template')), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
+const compilerExamples = <?= json_encode($examples, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?>;
 const editor = document.getElementById('code-editor');
 const language = document.getElementById('language');
 const stdin = document.getElementById('stdin');
@@ -37,14 +71,40 @@ const terminal = document.getElementById('terminal');
 const runButton = document.getElementById('run-code');
 const resetButton = document.getElementById('reset-code');
 const executionTime = document.getElementById('execution-time');
+const exampleContext = document.getElementById('example-context');
+const params = new URLSearchParams(window.location.search);
+const requestedExample = params.get('example');
+const requestedLanguage = params.get('lang');
 
-function resetEditor() {
+function loadTemplate() {
     editor.value = compilerTemplates[language.value];
     terminal.textContent = 'Prêt à exécuter.';
     executionTime.textContent = '—';
 }
-language.addEventListener('change', resetEditor);
-resetButton.addEventListener('click', resetEditor);
+
+function loadExample() {
+    const example = compilerExamples[requestedExample];
+    if (!example) {
+        loadTemplate();
+        return;
+    }
+    language.value = requestedLanguage && compilerTemplates[requestedLanguage] ? requestedLanguage : example.language;
+    editor.value = example.code;
+    exampleContext.hidden = false;
+    exampleContext.textContent = 'Exercice préchargé · ' + example.label;
+    terminal.textContent = 'Exercice prêt à être exécuté.';
+    executionTime.textContent = '—';
+}
+
+language.addEventListener('change', loadTemplate);
+resetButton.addEventListener('click', () => {
+    if (requestedExample && compilerExamples[requestedExample]) {
+        loadExample();
+    } else {
+        loadTemplate();
+    }
+});
+
 runButton.addEventListener('click', async () => {
     runButton.disabled = true;
     runButton.textContent = '⏳ Exécution...';
@@ -58,5 +118,6 @@ runButton.addEventListener('click', async () => {
     } catch (error) { terminal.textContent = 'Impossible de contacter le serveur de compilation.'; }
     finally { runButton.disabled = false; runButton.textContent = '▶ Exécuter'; }
 });
-resetEditor();
+
+loadExample();
 </script>
