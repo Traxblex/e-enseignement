@@ -11,7 +11,18 @@ $examples = [
     'rectangle' => [
         'label' => 'Chapitre 01 · Rectangle',
         'language' => 'php',
-        'code' => "<?php\n$lg = 10;\n$lr = 5;\n\n$p = 2 * ($lg + $lr);\n$s = $lg * $lr;\n\necho \"Périmètre : $p\\n\";\necho \"Aire : $s\\n\";\n",
+        'code' => <<<'PHP'
+<?php
+$lg = 10;
+$lr = 5;
+
+$p = 2 * ($lg + $lr);
+$s = $lg * $lr;
+
+echo "Périmètre : $p\n";
+echo "Aire : $s\n";
+PHP
+,
     ],
     'equation' => [
         'label' => 'Chapitre 02 · Équation',
