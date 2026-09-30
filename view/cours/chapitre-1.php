@@ -1,53 +1,27 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Chapitre 1 : Rectangle</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>.code-block { background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: monospace; }</style>
-</head>
-<body class="p-4">
-    <a href="index.php?page=cours" class="btn btn-outline-secondary mb-3">&larr; Retour aux cours</a>
-    <h2>Chapitre 1 : Calcul de Rectangle</h2>
-    
-    <ul class="nav nav-tabs mt-4" id="chap1Tabs">
-        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#php1">PHP</a></li>
-        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#js1">JavaScript</a></li>
-    </ul>
+<article class="lesson-page">
+    <a class="back-link" href="index.php?page=cours">← Retour aux cours</a>
+    <span class="eyebrow">CHAPITRE 01</span>
+    <h1>Variables & calcul de rectangle</h1>
+    <p class="lesson-intro">Apprendre à récupérer des valeurs, effectuer des calculs et afficher un résultat.</p>
+    <div class="lesson-grid">
+        <section class="lesson-card"><h2>Objectif</h2><p>À partir d'une longueur et d'une largeur, calculer le périmètre et l'aire d'un rectangle.</p><ul><li>Déclarer et utiliser des variables</li><li>Lire des données</li><li>Effectuer des opérations</li><li>Afficher le résultat</li></ul></section>
+        <section class="lesson-card"><h2>PHP</h2><pre class="code-block"><code>&lt;?php
+$lg = 10;
+$lr = 5;
 
-    <div class="tab-content border border-top-0 p-3">
-        <div class="tab-pane fade show active" id="php1">
-<pre class="code-block">
-&lt;form action="rectangle.php" method="post"&gt;
-    longueur: &lt;input type="text" name="lg" required&gt;&lt;br&gt;&lt;br&gt;
-    largeur: &lt;input type="text" name="lr" required&gt;&lt;br&gt;&lt;br&gt;
-    &lt;input type="submit" name="Calculer" value="Calculer"&gt;
-&lt;/form&gt;
-&lt;?php
-if(isset($_POST['Calculer'])){
-    $lg = $_POST['lg'];
-    $lr = $_POST['lr'];
-    $p = 2 * ($lg + $lr);
-    $s = $lg * $lr;
-    printf(" &lt;br&gt; le périmètre est de :%f", $p);
-    printf(" &lt;br&gt; l'aire est de :%f", $s);
-}
-?&gt;
-</pre>
-        </div>
-        <div class="tab-pane fade" id="js1">
-<pre class="code-block">
-&lt;script type='text/javascript'&gt;
-    let lg = parseFloat(prompt("Donner la longueur: "));
-    let lr = parseFloat(prompt("Donner la largeur: "));
-    let p = 2 * (lg + lr);
-    let s = lg * lr;
-    alert("la surface est de : " + s + " et le périmètre est de: " + p);
-&lt;/script&gt;
-</pre>
-        </div>
+$p = 2 * ($lg + $lr);
+$s = $lg * $lr;
+
+echo "Périmètre : $p\n";
+echo "Aire : $s\n";</code></pre></section>
+        <section class="lesson-card"><h2>JavaScript</h2><pre class="code-block"><code>const lg = 10;
+const lr = 5;
+
+const p = 2 * (lg + lr);
+const s = lg * lr;
+
+console.log("Périmètre :", p);
+console.log("Aire :", s);</code></pre></section>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+</article>
