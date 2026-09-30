@@ -109,7 +109,7 @@ $command = [
     '--cpus', '1',
     '--pids-limit', '64',
     '--read-only',
-    '--tmpfs', '/tmp:rw,noexec,nosuid,size=32m',
+    '--tmpfs', '/tmp:rw,nosuid,nodev,size=32m',
     '--security-opt', 'no-new-privileges',
     '--cap-drop', 'ALL',
     '--mount', $mount,
