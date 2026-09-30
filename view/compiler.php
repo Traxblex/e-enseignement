@@ -138,13 +138,12 @@ const exampleContext = document.getElementById('example-context');
 const params = new URLSearchParams(window.location.search);
 const requestedExample = params.get('example');
 const requestedLanguage = params.get('lang');
-const codeCounter = document.createElement('span');
-
 function updateCounter() { document.getElementById('code-counter').textContent = editor.value.length.toLocaleString('fr-FR') + ' caractères'; }
 editor.addEventListener('input', updateCounter);
 editor.addEventListener('keydown', (event) => { if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') { event.preventDefault(); runButton.click(); } });
 
 function loadTemplate() {
+    stdin.value = '';
     editor.value = compilerTemplates[language.value];
     terminal.textContent = 'Prêt à exécuter.';
     executionTime.textContent = '—';
@@ -161,6 +160,7 @@ function loadExample() {
     editor.value = example.code;
     exampleContext.hidden = false;
     exampleContext.textContent = 'Exercice préchargé · ' + example.label;
+    stdin.value = example.input || '';
     terminal.textContent = 'Exercice prêt à être exécuté.';
     executionTime.textContent = '—';
 }
