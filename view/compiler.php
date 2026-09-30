@@ -17,37 +17,87 @@ $lessonExamples = [
     1 => [
         'title' => 'Chapitre 1 · Variables & rectangle',
         'language' => 'php',
-        'code' => "<?php\n$longueur = (float) trim(fgets(STDIN));\n$largeur = (float) trim(fgets(STDIN));\n\n$aire = $longueur * $largeur;\n$perimetre = 2 * ($longueur + $largeur);\n\necho \"Aire : $aire\\n\";\necho \"Périmètre : $perimetre\\n\";\n",
+        'code' => <<<'CODE'
+<?php
+$longueur = (float) trim(fgets(STDIN));
+$largeur = (float) trim(fgets(STDIN));
+
+$aire = $longueur * $largeur;
+$perimetre = 2 * ($longueur + $largeur);
+
+echo "Aire : $aire\n";
+echo "Périmètre : $perimetre\n";
+CODE,
         'input' => "10\n5\n",
     ],
     2 => [
         'title' => 'Chapitre 2 · Structures alternatives',
         'language' => 'php',
-        'code' => "<?php\n$a = (float) trim(fgets(STDIN));\n$b = (float) trim(fgets(STDIN));\n\nif ($a == 0) {\n    echo $b == 0 ? \"Tous les réels\\n\" : \"Aucune solution\\n\";\n} else {\n    echo \"x = \" . (-$b / $a) . \"\\n\";\n}\n",
+        'code' => <<<'CODE'
+<?php
+$a = (float) trim(fgets(STDIN));
+$b = (float) trim(fgets(STDIN));
+
+if ($a == 0) {
+    echo $b == 0 ? "Tous les réels\n" : "Aucune solution\n";
+} else {
+    echo "x = " . (-$b / $a) . "\n";
+}
+CODE,
         'input' => "2\n-6\n",
     ],
     3 => [
         'title' => 'Chapitre 3 · Boucles & diviseurs',
         'language' => 'php',
-        'code' => "<?php\n$n = (int) trim(fgets(STDIN));\n\nfor ($d = 1; $d <= $n; $d++) {\n    if ($n % $d === 0) {\n        echo \"$d\\n\";\n    }\n}\n",
+        'code' => <<<'CODE'
+<?php
+$n = (int) trim(fgets(STDIN));
+
+for ($d = 1; $d <= $n; $d++) {
+    if ($n % $d === 0) {
+        echo "$d\n";
+    }
+}
+CODE,
         'input' => "24\n",
     ],
     4 => [
         'title' => 'Chapitre 4 · Fonctions',
         'language' => 'php',
-        'code' => "<?php\nfunction aireRectangle(float $longueur, float $largeur): float {\n    return $longueur * $largeur;\n}\n\n$longueur = (float) trim(fgets(STDIN));\n$largeur = (float) trim(fgets(STDIN));\necho aireRectangle($longueur, $largeur) . \"\\n\";\n",
+        'code' => <<<'CODE'
+<?php
+function aireRectangle(float $longueur, float $largeur): float {
+    return $longueur * $largeur;
+}
+
+$longueur = (float) trim(fgets(STDIN));
+$largeur = (float) trim(fgets(STDIN));
+echo aireRectangle($longueur, $largeur) . "\n";
+CODE,
         'input' => "10\n5\n",
     ],
     5 => [
         'title' => 'Chapitre 5 · Tableaux',
         'language' => 'php',
-        'code' => "<?php\n$tab = [12, 8, 15, 10];\n\necho \"Min : \" . min($tab) . \"\\n\";\necho \"Max : \" . max($tab) . \"\\n\";\necho \"Moyenne : \" . (array_sum($tab) / count($tab)) . \"\\n\";\n",
+        'code' => <<<'CODE'
+<?php
+$tab = [12, 8, 15, 10];
+
+echo "Min : " . min($tab) . "\n";
+echo "Max : " . max($tab) . "\n";
+echo "Moyenne : " . (array_sum($tab) / count($tab)) . "\n";
+CODE,
         'input' => '',
     ],
     6 => [
         'title' => 'Chapitre 6 · Fichiers',
         'language' => 'php',
-        'code' => "<?php\n$texte = \"Bonjour depuis un fichier !\\n\";\nfile_put_contents(\"/tmp/message.txt\", $texte);\necho file_get_contents(\"/tmp/message.txt\");\n",
+        'code' => <<<'CODE'
+<?php
+$texte = "Bonjour depuis un fichier !\n";
+file_put_contents("/tmp/message.txt", $texte);
+echo file_get_contents("/tmp/message.txt");
+CODE,
         'input' => '',
     ],
 ];
