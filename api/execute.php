@@ -72,7 +72,19 @@ if (!isset($profiles[$language])) {
 }
 
 $profile = $profiles[$language];
-$base = sys_get_temp_dir() . '/eenseignement-' . bin2hex(random_bytes(12));
+
+// Apache peut utiliser un /tmp privé (PrivateTmp). Docker, lui, voit le
+// système de fichiers de l'hôte. On utilise donc un répertoire partagé
+// explicitement créé sur l'hôte.
+$runnerBase = '/var/lib/eenseignement/runner';
+
+if (!is_dir($runnerBase) && !mkdir($runnerBase, 0770, true)) {
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'Impossible de créer le répertoire du runner.']);
+    exit;
+}
+
+$base = $runnerBase . '/eenseignement-' . bin2hex(random_bytes(12));
 
 if (!mkdir($base, 0700, true)) {
     http_response_code(500);
@@ -80,12 +92,14 @@ if (!mkdir($base, 0700, true)) {
     exit;
 }
 
-file_put_contents($base . '/' . $profile['source'], $code);
-file_put_contents($base . '/stdin.txt', $stdin);
+if (file_put_contents($base . '/' . $profile['source'], $code) === false ||
+    file_put_contents($base . '/stdin.txt', $stdin) === false) {
+    exec('rm -rf ' . escapeshellarg($base));
+    http_response_code(500);
+    echo json_encode(['success' => false, 'error' => 'Impossible d’écrire les fichiers du programme.']);
+    exit;
+}
 
-// --mount exige une syntaxe key=value.
-// Le chemin temporaire peut contenir des caractères spéciaux : on le passe
-// directement à Docker via les arguments échappés plus bas.
 $mount = 'type=bind,source=' . $base . ',target=/workspace,readonly';
 
 $command = [
