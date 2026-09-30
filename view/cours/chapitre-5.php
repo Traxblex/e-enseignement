@@ -25,5 +25,5 @@ console.log("Min :", min);
 console.log("Max :", max);
 console.log("Moyenne :", moyenne);</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=arrays&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
