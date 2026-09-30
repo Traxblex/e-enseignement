@@ -123,6 +123,21 @@ button, select, textarea { font: inherit; }
 .back-link { display: inline-block; margin-bottom: 28px; color: #93c5fd; }
 .lesson-page h1 { margin: 7px 0 10px; font-size: clamp(2rem,4vw,3.3rem); }
 .lesson-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 28px 0; }
+.lesson-practice {
+    margin-top: 22px;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    border: 1px solid #26334f;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(17,24,39,.95), rgba(11,18,32,.9));
+}
+.lesson-practice h2 { margin: 6px 0 5px; font-size: 1.15rem; }
+.lesson-practice p { margin: 0; color: var(--muted); line-height: 1.6; }
+.lesson-practice .hero-button { margin-top: 0; white-space: nowrap; }
+
 .lesson-card { padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: #0b1220; }
 .lesson-card h2 { margin-top: 0; }
 .lesson-card p, .lesson-card li { color: #aab7ca; line-height: 1.7; }
