@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Révision Générale 1ère année</title>
-    <!-- Chargement de Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body { display: flex; flex-direction: column; min-height: 100vh; }
-        .sidebar { background-color: #f8f9fa; padding: 20px; border-right: 2px solid #dee2e6; }
-        .header, .footer { background-color: #e9ecef; padding: 15px 20px; border-bottom: 2px solid #dee2e6; }
-        .footer { border-top: 2px solid #dee2e6; border-bottom: none; margin-top: auto; }
-        .code-area { background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; font-family: monospace; white-space: pre-wrap; width: 100%; }
-        .compiler-output { background-color: #000; color: #0f0; padding: 15px; border-radius: 5px; min-height: 120px; font-family: monospace; }
-        .nav-link { color: #333; }
-        .nav-link:hover { color: #0d6efd; }
-        .schema-arrow { font-size: 1.2rem; color: #6c757d; margin: 0 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-Enseignement · BTS SIO SLAM</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/compiler.css">
+<style>
+:root{color-scheme:dark}body{margin:0;min-height:100vh;background:#070b14;color:#e5e7eb;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{text-decoration:none}.site-header{position:sticky;top:0;z-index:20;background:rgba(7,11,20,.9);backdrop-filter:blur(14px);border-bottom:1px solid #1f2937}.site-nav{max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800}.brand img{width:38px;height:38px;object-fit:contain;border-radius:10px}.brand span{color:#8ea8ff}.main-nav{display:flex;gap:6px}.main-nav a{color:#94a3b8;padding:9px 12px;border-radius:9px}.main-nav a:hover,.main-nav a.active{color:#fff;background:#111827}.site-footer{margin-top:50px;border-top:1px solid #1f2937;color:#64748b;text-align:center;padding:24px}.site-main{min-height:calc(100vh - 150px)}@media(max-width:700px){.main-nav{display:none}.site-nav{padding:12px 15px}}
+</style>
 </head>
 <body>
-
-<!-- HEADER -->
-<header class="header d-flex justify-content-between align-items-center">
-    <div class="fw-bold fs-5">
-        <img src="img/logo.webp" alt="Logo" width="40" height="40" class="me-2">
-        <span class="text-primary">BTS SIO SLAM</span>
-    </div>
-    <div class="text-center">
-        <h1 class="h4 mb-0 text-uppercase">Révision Générale</h1>
-        <span class="text-muted">1ère année</span>
-    </div>
-    <div class="text-end fw-bold">
-        Promo 321<br>
-        <span class="text-primary">B. Ahmed</span>
-    </div>
+<header class="site-header">
+<nav class="site-nav">
+<a class="brand" href="index.php?page=index"><img src="img/logo.webp" alt="E-Enseignement"><span>E-Enseignement</span></a>
+<div class="main-nav">
+<a href="index.php?page=index">Accueil</a>
+<a href="index.php?page=cours">Cours</a>
+<a class="active" href="index.php?page=compiler">Compilateur</a>
+</div>
+</nav>
 </header>
+<main class="site-main">
