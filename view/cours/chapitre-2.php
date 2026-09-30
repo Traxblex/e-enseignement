@@ -23,5 +23,5 @@ if (a === 0) {
     console.log("x =", -b / a);
 }</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=equation&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
