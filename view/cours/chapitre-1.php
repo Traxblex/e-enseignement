@@ -23,5 +23,5 @@ const s = lg * lr;
 console.log("Périmètre :", p);
 console.log("Aire :", s);</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=rectangle&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
