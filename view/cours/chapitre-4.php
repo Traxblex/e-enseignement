@@ -17,5 +17,5 @@ echo aireRectangle(10, 5);</code></pre></section>
 
 console.log(aireRectangle(10, 5));</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=functions&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
