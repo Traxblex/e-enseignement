@@ -23,5 +23,8 @@ if (a === 0) {
     console.log("x =", -b / a);
 }</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <div class="lesson-practice">
+        <div><span class="eyebrow">MISE EN PRATIQUE</span><h2>Teste plusieurs couples de valeurs.</h2><p>Le compilateur te permet de modifier <code>a</code> et <code>b</code> depuis l'entrée standard.</p></div>
+        <a class="hero-button" href="index.php?page=compiler&language=php&lesson=2">Ouvrir l'exercice →</a>
+    </div>
 </article>
