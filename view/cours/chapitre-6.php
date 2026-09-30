@@ -19,5 +19,5 @@ with open("/tmp/message.txt", "w") as fichier:
 with open("/tmp/message.txt", "r") as fichier:
     print(fichier.read())</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler">Tester dans le compilateur →</a>
+    <a class="hero-button" href="index.php?page=compiler&example=files&lang=php">Tester cet exercice dans le compilateur →</a>
 </article>
