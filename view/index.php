@@ -17,12 +17,12 @@
 <div class="chapter-grid">
 <?php
 $chapters=[
-['1','Notions générales','Variables, types et bases de l’algorithmique.'],
-['2','Boucles','Sommes, diviseurs et répétitions.'],
-['3','Tableaux','Manipulation et parcours des tableaux.'],
-['4','Procédures & fonctions','Organiser un programme avec des fonctions.'],
-['5','Équations','Résolution et logique de calcul.'],
-['6','Fichiers','Lire et manipuler des données.'],
+['1','Variables & rectangle','Variables, saisie, calculs et affichage.'],
+['2','Structures alternatives','Conditions et résolution d’une équation.'],
+['3','Boucles & diviseurs','Répétitions, modulo et recherche des diviseurs.'],
+['4','Fonctions','Créer des fonctions réutilisables avec paramètres et retour.'],
+['5','Tableaux','Parcourir et analyser une collection de valeurs.'],
+['6','Fichiers','Lire et écrire des données dans des fichiers.'],
 ];
 foreach($chapters as $chapter):
 ?>
@@ -32,8 +32,8 @@ foreach($chapters as $chapter):
 </section>
 
 <section class="exercise-card">
-<div><span class="eyebrow">EXERCICE RAPIDE</span><h2>Calculer la surface d’un rectangle</h2><p>Teste directement un programme simple dans le compilateur en ligne.</p></div>
-<a href="index.php?page=compiler">Commencer l’exercice →</a>
+<div><span class="eyebrow">EXERCICE RAPIDE</span><h2>Calculer la surface d’un rectangle</h2><p>Ouvre un exercice préchargé et teste immédiatement ton programme.</p></div>
+<a href="index.php?page=compiler&example=rectangle&lang=php">Commencer l’exercice →</a>
 </section>
 </div>
 <style>
