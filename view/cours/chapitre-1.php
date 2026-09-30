@@ -12,8 +12,10 @@ $lr = 5;
 $p = 2 * ($lg + $lr);
 $s = $lg * $lr;
 
-echo "Périmètre : $p\n";
-echo "Aire : $s\n";</code></pre></section>
+echo "Périmètre : $p
+";
+echo "Aire : $s
+";</code></pre></section>
         <section class="lesson-card"><h2>JavaScript</h2><pre class="code-block"><code>const lg = 10;
 const lr = 5;
 
@@ -23,5 +25,5 @@ const s = lg * lr;
 console.log("Périmètre :", p);
 console.log("Aire :", s);</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler&example=rectangle&lang=php">Tester cet exercice dans le compilateur →</a>
+    <div class="lesson-practice"><div><span class="eyebrow">MISE EN PRATIQUE</span><h2>Teste le programme avec tes propres valeurs.</h2><p>L'exercice est préchargé dans le laboratoire avec une entrée standard prête à modifier.</p></div><a class="hero-button" href="index.php?page=compiler&example=rectangle&lang=php">Ouvrir l'exercice →</a></div>
 </article>
