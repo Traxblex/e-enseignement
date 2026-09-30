@@ -11,6 +11,7 @@ $examples = [
     'rectangle' => [
         'label' => 'Chapitre 01 · Rectangle',
         'language' => 'php',
+        'input' => "10\n5\n",
         'code' => <<<'PHP'
 <?php
 $lg = 10;
@@ -27,6 +28,7 @@ PHP
     'equation' => [
         'label' => 'Chapitre 02 · Équation',
         'language' => 'php',
+        'input' => "2\n-6\n",
         'code' => <<<'PHP'
 <?php
 $a = 2;
@@ -43,6 +45,7 @@ PHP
     'divisors' => [
         'label' => 'Chapitre 03 · Diviseurs',
         'language' => 'php',
+        'input' => "24\n",
         'code' => <<<'PHP'
 <?php
 $n = 24;
@@ -59,6 +62,7 @@ PHP
     'functions' => [
         'label' => 'Chapitre 04 · Fonctions',
         'language' => 'php',
+        'input' => "10\n5\n",
         'code' => <<<'PHP'
 <?php
 function aireRectangle(float $longueur, float $largeur): float {
@@ -112,7 +116,7 @@ PHP
                 <button id="reset-code" type="button">Réinitialiser</button>
                 <button id="run-code" class="run-button" type="button">▶ Exécuter</button>
             </div>
-            <textarea id="code-editor" spellcheck="false" aria-label="Éditeur de code"></textarea>
+            <textarea id="code-editor" spellcheck="false" aria-label="Éditeur de code"></textarea><div class="editor-footer"><span id="code-counter">0 caractères</span><span>Ctrl/Cmd + Entrée pour exécuter</span></div>
         </section>
         <section class="side-column">
             <div class="input-card"><div class="card-title"><span>Entrée standard</span><small>stdin</small></div><textarea id="stdin" spellcheck="false" placeholder="Valeurs envoyées au programme..."></textarea></div>
@@ -134,11 +138,16 @@ const exampleContext = document.getElementById('example-context');
 const params = new URLSearchParams(window.location.search);
 const requestedExample = params.get('example');
 const requestedLanguage = params.get('lang');
+function updateCounter() { document.getElementById('code-counter').textContent = editor.value.length.toLocaleString('fr-FR') + ' caractères'; }
+editor.addEventListener('input', updateCounter);
+editor.addEventListener('keydown', (event) => { if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') { event.preventDefault(); runButton.click(); } });
 
 function loadTemplate() {
+    stdin.value = '';
     editor.value = compilerTemplates[language.value];
     terminal.textContent = 'Prêt à exécuter.';
     executionTime.textContent = '—';
+    updateCounter();
 }
 
 function loadExample() {
@@ -151,6 +160,7 @@ function loadExample() {
     editor.value = example.code;
     exampleContext.hidden = false;
     exampleContext.textContent = 'Exercice préchargé · ' + example.label;
+    stdin.value = example.input || '';
     terminal.textContent = 'Exercice prêt à être exécuté.';
     executionTime.textContent = '—';
 }
@@ -179,4 +189,5 @@ runButton.addEventListener('click', async () => {
 });
 
 loadExample();
+updateCounter();
 </script>

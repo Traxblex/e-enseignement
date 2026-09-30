@@ -17,5 +17,5 @@ echo aireRectangle(10, 5);</code></pre></section>
 
 console.log(aireRectangle(10, 5));</code></pre></section>
     </div>
-    <a class="hero-button" href="index.php?page=compiler&example=functions&lang=php">Tester cet exercice dans le compilateur →</a>
+    <div class="lesson-practice"><div><span class="eyebrow">MISE EN PRATIQUE</span><h2>Rends ton calcul réutilisable.</h2><p>Le laboratoire te permet de tester la fonction avec différentes valeurs.</p></div><a class="hero-button" href="index.php?page=compiler&example=functions&lang=php">Ouvrir l'exercice →</a></div>
 </article>
