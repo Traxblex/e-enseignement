@@ -1,5 +1,9 @@
 </main>
-<footer class="site-footer">E-Enseignement · BTS SIO SLAM · Laboratoire de programmation</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<footer class="site-footer">
+    <div class="site-footer-inner">
+        <strong>E-Enseignement</strong>
+        <span>BTS SIO SLAM · Laboratoire de programmation</span>
+    </div>
+</footer>
 </body>
 </html>
